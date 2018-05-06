@@ -1,0 +1,8 @@
+.main {
+  height: 100%;
+}
+
+.webview webview {
+  height: 100vh;
+  overflow: scroll;
+}
