@@ -36,7 +36,7 @@ class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <Sidebar changeLink={this.changeLink} />
+        <Sidebar changeLink={this.changeLink} services={this.services} />
         <Main link={this.state.link} />
       </div>
     );
