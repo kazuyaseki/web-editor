@@ -40,7 +40,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Sidebar changeLink={this.changeLink} services={this.services} />
+        <Sidebar
+          changeLink={this.changeLink}
+          services={this.services}
+          currentServiceId={this.state.currentServiceId}
+        />
         <Main link={currentService && currentService.url} />
       </div>
     );

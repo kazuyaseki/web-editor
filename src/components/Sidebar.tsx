@@ -7,6 +7,7 @@ export default class Sidebar extends React.Component<
   {
     changeLink: (link: string) => void;
     services: Types.Service[];
+    currentServiceId: number;
   },
   any
 > {
@@ -14,7 +15,13 @@ export default class Sidebar extends React.Component<
     return (
       <ul className="sidebar">
         {this.props.services.map((service: Types.Service) => (
-          <li className="active" data-id={service.id} onClick={this.changeLink}>
+          <li
+            className={
+              this.props.currentServiceId === service.id ? 'active' : ''
+            }
+            data-id={service.id}
+            onClick={this.changeLink}
+          >
             {service.name}
           </li>
         ))}
