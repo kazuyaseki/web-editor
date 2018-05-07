@@ -29,7 +29,7 @@ class App extends React.Component {
     }
   ];
 
-  public changeLink = (link: string) => {
+  public changeService = (link: string) => {
     this.setState({ link });
   };
 
@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Sidebar
-          changeLink={this.changeLink}
+          changeService={this.changeService}
           services={this.services}
           currentServiceId={this.state.currentServiceId}
         />
