@@ -4,12 +4,14 @@ import './App.css';
 import Main from './components/Main';
 import Sidebar from './components/Sidebar';
 
+import * as Types from './types';
+
 class App extends React.Component {
   public state = {
     link: 'https://paper.dropbox.com/'
   };
 
-  public services = [
+  public services: Types.Service[] = [
     {
       id: 1,
       name: 'Dropbox',
