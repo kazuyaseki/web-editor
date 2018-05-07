@@ -8,7 +8,7 @@ import * as Types from './types';
 
 class App extends React.Component {
   public state = {
-    link: 'https://paper.dropbox.com/'
+    currentServiceId: 1
   };
 
   public services: Types.Service[] = [
@@ -34,10 +34,14 @@ class App extends React.Component {
   };
 
   public render() {
+    const currentService = this.services.find(
+      (service: Types.Service) => this.state.currentServiceId === service.id
+    );
+
     return (
       <div className="App">
         <Sidebar changeLink={this.changeLink} services={this.services} />
-        <Main link={this.state.link} />
+        <Main link={currentService && currentService.url} />
       </div>
     );
   }
