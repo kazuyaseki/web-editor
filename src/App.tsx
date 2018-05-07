@@ -29,8 +29,8 @@ class App extends React.Component {
     }
   ];
 
-  public changeService = (link: string) => {
-    this.setState({ link });
+  public changeService = (id: number) => {
+    this.setState({ currentServiceId: id });
   };
 
   public render() {

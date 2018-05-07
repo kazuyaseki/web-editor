@@ -5,7 +5,7 @@ import * as Types from '../types';
 
 export default class Sidebar extends React.Component<
   {
-    changeService: (link: string) => void;
+    changeService: (id: number) => void;
     services: Types.Service[];
     currentServiceId: number;
   },
@@ -30,6 +30,8 @@ export default class Sidebar extends React.Component<
   }
 
   private changeService = (e: React.MouseEvent<HTMLLIElement>) => {
-    this.props.changeService(e.currentTarget.getAttribute('data-id') || '');
+    this.props.changeService(
+      Number(e.currentTarget.getAttribute('data-id')) || 1
+    );
   };
 }
