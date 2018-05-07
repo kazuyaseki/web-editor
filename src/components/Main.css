@@ -6,3 +6,11 @@
   height: 100vh;
   overflow: scroll;
 }
+
+.webview {
+  display: none;
+}
+
+.webview.active {
+  display: block;
+}

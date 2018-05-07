@@ -34,10 +34,6 @@ class App extends React.Component {
   };
 
   public render() {
-    const currentService = this.services.find(
-      (service: Types.Service) => this.state.currentServiceId === service.id
-    );
-
     return (
       <div className="App">
         <Sidebar
@@ -45,7 +41,10 @@ class App extends React.Component {
           services={this.services}
           currentServiceId={this.state.currentServiceId}
         />
-        <Main link={currentService && currentService.url} />
+        <Main
+          services={this.services}
+          currentServiceId={this.state.currentServiceId}
+        />
       </div>
     );
   }

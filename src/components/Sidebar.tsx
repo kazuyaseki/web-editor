@@ -16,6 +16,7 @@ export default class Sidebar extends React.Component<
       <ul className="sidebar">
         {this.props.services.map((service: Types.Service) => (
           <li
+            key={service.id}
             className={
               this.props.currentServiceId === service.id ? 'active' : ''
             }
